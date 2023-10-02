@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Urgence = () => {
+const Urgences = () => {
   return (
     <View>
       <Text>Urgence</Text>
@@ -9,4 +9,4 @@ const Urgence = () => {
   );
 };
 
-export default Urgence;
+export default Urgences;
