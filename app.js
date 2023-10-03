@@ -27,13 +27,13 @@ export default function App() {
               },
               headerTitle: (props) => (
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                  <Text style={{ fontSize: 18, color: 'white', marginRight: 10 }}>
-                    Bonjour monsieur ...
+                  <Text style={{ fontSize: 22, color: 'white', marginRight: 10, fontWeight: 600 }}>
+                    Bonjour Monsieur HAROLD
                   </Text>
                 </View>
               ),
               headerLeft: () => (
-                <View style={{ margin: 10, padding: 5, backgroundColor: "rgba(255, 255, 255, 0.5)", borderRadius: 10 }}>
+                <View style={{ margin: 10, padding: 5, backgroundColor: "rgba(255, 255, 255, 0.3)", borderRadius: 10 }}>
                   <Button
                     title="Retour accueil"
                     onPress={() => navigation.navigate('Accueil')}
@@ -44,7 +44,7 @@ export default function App() {
               headerRight: () => (
 
                 <View style={{ flexDirection: 'row' }}>
-                  <View style={{ margin: 10, padding: 5, backgroundColor: "rgba(255, 255, 255, 0.5)", borderRadius: 10 }}>
+                  <View style={{ margin: 10, padding: 5, backgroundColor: "rgba(255, 255, 255, 0.3)", borderRadius: 10 }}>
                     <Button
                       title="Notifications"
                       onPress={() => navigation.navigate('Notifications')}
