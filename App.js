@@ -7,6 +7,7 @@ import Urgence from './components/Urgences';
 import Accueil from './components/Accueil';
 import { Button, View, Text } from 'react-native';
 import Notifications from './components/Notifications';
+import Medecin from './components/Medecin';
 
 const Stack = createStackNavigator();
 
@@ -66,6 +67,7 @@ export default function App() {
             <Stack.Screen name="Urgences" component={Urgence} />
             <Stack.Screen name="AideSoignant" component={AideSoignant} />
             <Stack.Screen name="Notifications" component={Notifications} />
+            <Stack.Screen name="Medecin" component={Medecin} />
           </Stack.Navigator>
         </SafeAreaView>
       </SafeAreaProvider>

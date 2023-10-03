@@ -17,6 +17,12 @@ const Accueil = ({ navigation }) => {
             onPress={() => navigation.navigate('Urgences')}
           />
         </View>
+        <View style={styles.button}>
+          <Button
+            title="Médecin"
+            onPress={() => navigation.navigate('Medecin')}
+          />
+        </View>
       </View>
       <View style={[styles.container, { backgroundColor: '#F1F3DD' }]}>
         <Text>Accueil</Text>
