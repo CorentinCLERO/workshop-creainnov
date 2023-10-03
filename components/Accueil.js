@@ -1,27 +1,26 @@
 import React from 'react';
-import { Button, View, StyleSheet, Text } from 'react-native';
+import { Button, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const Accueil = ({ navigation }) => {
   return (
     <View style={styles.previewContainer} >
       <View style={[styles.container, { backgroundColor: '#DCDFC4' }]}>
-        <View style={styles.button}>
+        <View style={styles.buttonContainer}>
           <Button
             title="Aide Soignant"
             onPress={() => navigation.navigate('AideSoignant')}
           />
         </View>
-        <View style={styles.button}>
+        <View style={styles.buttonContainer}>
           <Button
             title="Urgences"
             onPress={() => navigation.navigate('Urgences')}
           />
         </View>
-        <View style={styles.button}>
-          <Button
-            title="Médecin"
-            onPress={() => navigation.navigate('Medecin')}
-          />
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate('Medecin')} style={styles.button}>
+            <Text>Médecin</Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={[styles.container, { backgroundColor: '#F1F3DD' }]}>
@@ -35,16 +34,20 @@ const styles = StyleSheet.create({
   previewContainer: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'aliceblue',
   },
   container: {
     flex: 1,
     alignItems: 'center',
   },
-  button: {
+  buttonContainer: {
     width: '100%',
     padding: 10,
-  }
+  },
+  button: {
+    backgroundColor: 'white',
+    padding: 10,
+    borderRadius: 5,
+  },
 });
 
 export default Accueil;
