@@ -2,11 +2,11 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialIcons } from '@expo/vector-icons';
 import AideSoignant from './components/AideSoignant';
 import Urgence from './components/Urgences';
 import Accueil from './components/Accueil';
-import { Button, TouchableOpacity, View, Text } from 'react-native';
+import { Button, View, Text } from 'react-native';
+import Notifications from './components/Notifications';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +17,7 @@ export default function App() {
         <SafeAreaView style={{ flex: 1 }}>
           <Stack.Navigator
             initialRouteName="Accueil"
-            screenOptions={{
+            screenOptions={({ navigation }) => ({
               headerStyle: {
                 backgroundColor: "#51A8FF",
                 height: 100,
@@ -32,24 +32,40 @@ export default function App() {
                 </View>
               ),
               headerLeft: () => (
-                <TouchableOpacity onPress={() => navigation.navigate('Accueil')}>
-                  <MaterialIcons name="house" size={40} color="white" />
-                </TouchableOpacity>
+                <View style={{ margin: 10, padding: 5, backgroundColor: "rgba(255, 255, 255, 0.5)", borderRadius: 10 }}>
+                  <Button
+                    title="Retour accueil"
+                    onPress={() => navigation.navigate('Accueil')}
+                    color="rgba(0, 0, 0, 0)"
+                  />
+                </View>
               ),
               headerRight: () => (
-                <Button
-                  title="Bouton Droit"
-                  onPress={() => {
-                    // Action à exécuter lorsque le bouton droit est pressé
-                  }}
-                />
+
+                <View style={{ flexDirection: 'row' }}>
+                  <View style={{ margin: 10, padding: 5, backgroundColor: "rgba(255, 255, 255, 0.5)", borderRadius: 10 }}>
+                    <Button
+                      title="Notifications"
+                      onPress={() => navigation.navigate('Notifications')}
+                      color="rgba(0, 0, 0, 0)"
+                    />
+                  </View>
+                  <View style={{ margin: 10, padding: 5, marginRight: 10, backgroundColor: "rgba(255, 0, 0, 1)", borderRadius: 10 }}>
+                    <Button
+                      title="Urgences"
+                      onPress={() => navigation.navigate('Urgences')}
+                      color="rgba(0, 0, 0, 0)"
+                    />
+                  </View>
+                </View>
               ),
-            }}
+            })}
 
           >
             <Stack.Screen name="Accueil" component={Accueil} />
             <Stack.Screen name="Urgences" component={Urgence} />
             <Stack.Screen name="AideSoignant" component={AideSoignant} />
+            <Stack.Screen name="Notifications" component={Notifications} />
           </Stack.Navigator>
         </SafeAreaView>
       </SafeAreaProvider>
