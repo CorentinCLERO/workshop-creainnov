@@ -21,10 +21,13 @@
     "react-native": "0.72.5",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
-    "react-native-web": "^0.19.9"
+    "react-native-web": "^0.19.9",
+    "sequelize": "^6.33.0",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "nodemon": "^3.0.1"
   },
   "private": true,
   "description": "��#\u0000 \u0000w\u0000o\u0000r\u0000k\u0000s\u0000h\u0000o\u0000p\u0000-\u0000c\u0000r\u0000e\u0000a\u0000i\u0000n\u0000n\u0000o\u0000v\u0000\r\u0000 \u0000",
