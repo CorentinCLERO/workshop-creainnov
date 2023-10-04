@@ -1,4 +1,6 @@
 var express = require("express");
+const app = express();
+app.use(express.json());
 var router = express.Router();
 const { Sequelize, DataTypes } = require("sequelize");
 const Op = Sequelize.Op;
@@ -56,9 +58,19 @@ router.get("/messages", async function (req, res, next) {
 });
 
 router.post("/messages", async function (req, res, next) {
+  const schema = Joi.object({
+    text: Joi.string().required(),
+    name: Joi.string().required(),
+  });
+  const { error, value } = schema.validate(req.body);
+  if (error) return res.status(400).json({ message: error.message });
+
   try {
+    console.log(req.body); // Afficher le corps de la requête avant l'analyse JSON
+
     const newMessage = await Message.create({
-      text: express.text,
+      text: req.body.text,
+      name: req.body.name,
     });
     // Envoyer les messages en tant que réponse JSON
     res.json(newMessage);
