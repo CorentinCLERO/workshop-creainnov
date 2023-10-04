@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Urgences = () => {
+const Notifications = () => {
   return (
     <View>
-      <Text>Urgences</Text>
+      <Text>Notifications</Text>
     </View>
   );
 };
 
-export default Urgences;
+export default Notifications;

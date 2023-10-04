@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const port = 3000;
 var indexRouter = require("./routes/index");
-var messagesRouter = require("./routes/messages");
+// var messagesRouter = require("./routes/messages");
 
 var app = express();
 
@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/messages", messagesRouter);
+// app.use("/messages", messagesRouter);
 
 app.listen(() => {
   console.log(`Server listening at http://localhost:3000}`);
